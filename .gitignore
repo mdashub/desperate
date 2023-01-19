@@ -1,0 +1,8 @@
+allure-report/
+screenshots/
+test-output/
+build/
+
+#java
+*.class
+*jar
