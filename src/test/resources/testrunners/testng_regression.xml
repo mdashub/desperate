@@ -6,36 +6,36 @@
 		<!-- <listener
 			class-name="com.qa.opencart.listeners.AnnotationTransformer" />-->
 		<listener
-			class-name="com.qa.democart.listeners.ExtentReportListener" />
+			class-name="com.qa.crmpro.listeners.ExtentReportListener" />
 		 <listener
-			class-name="com.qa.opencart.listeners.TestAllureListener" />
+			class-name="com.qa.crmpro.listeners.TestAllureListener" />
 	</listeners>
 	<test name="Login Page Test">
 		<!-- <parameter name="browser" value="chrome" />
 		<parameter name="browserversion" value="90" />-->
 		<classes>
-			<class name="com.qa.democart.tests.LoginPageTest" />
+			<class name="com.qa.crmpro.tests.LoginPageTest" />
 		</classes>
 	</test>
 	<test name="Accounts Page Test">
 		<!-- <parameter name="browser" value="chrome" />
 		<parameter name="browserversion" value="90" />-->
 		<classes>
-			<class name="com.qa.democart.tests.AccountsPageTest" />
+			<class name="com.qa.crmpro.tests.AccountsPageTest" />
 		</classes>
 	</test>
 	<test name="Registration Page">
 		<!-- <parameter name="browser" value="chrome" />
 		<parameter name="browserversion" value="90" />-->
 		<classes>
-			<class name="com.qa.democart.tests.RegistrationPageTest" />
+			<class name="com.qa.crmpro.tests.RegistrationPageTest" />
 		</classes>
 	</test>
 	<!-- <test name="Login Page Test_chrome89">
 		<parameter name="browser" value="chrome" />
 		<parameter name="browserversion" value="89" />
 		<classes>
-			<class name="com.qa.opencart.tests.LoginPageTest" />
+			<class name="com.qa.crmpro.tests.LoginPageTest" />
 		</classes>
 	</test>
 
@@ -43,7 +43,7 @@
 		<parameter name="browser" value="firefox" />
 		<parameter name="browserversion" value="57" />
 		<classes>
-			<class name="com.qa.opencart.tests.LoginPageTest" />
+			<class name="com.qa.crmpro.tests.LoginPageTest" />
 		</classes>
 	</test>
 
@@ -51,7 +51,7 @@
 		<parameter name="browser" value="firefox" />
 		<parameter name="browserversion" value="83" />
 		<classes>
-			<class name="com.qa.opencart.tests.AccountsPageTest" />
+			<class name="com.qa.crmpro.tests.AccountsPageTest" />
 		</classes>
 	</test>
 
@@ -59,7 +59,7 @@
 		<parameter name="browser" value="chrome" />
 		<parameter name="browserversion" value="89" />
 		<classes>
-			<class name="com.qa.opencart.tests.AccountsPageTest" />
+			<class name="com.qa.crmpro.tests.AccountsPageTest" />
 		</classes>
 	</test> -->
 </suite>

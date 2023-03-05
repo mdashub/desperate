@@ -5,19 +5,19 @@
 	
 	<listeners>
 		<listener
-				class-name="com.qa.democart.listeners.TestAllureListener" />
+				class-name="com.qa.crmpro.listeners.TestAllureListener" />
 	</listeners>
 	
 	<listeners>
 		<listener
-			class-name="com.qa.democart.listeners.ExtentReportListener" />
+			class-name="com.qa.crmpro.listeners.ExtentReportListener" />
 	</listeners>
 	
 	
 	
 	<test name="Login Page Test">
 		<classes>
-			<class name="com.qa.democart.tests.LoginPageTest" />
+			<class name="com.qa.crmpro.tests.LoginPageTest" />
 		</classes>
 	</test>
 </suite>
