@@ -47,6 +47,7 @@ public class AccountsPage {
 		eleUtils.TwolevelMenuHandle(contactsLocator, newConatactLocator);
 
 		return new RegistrationPage(driver);
+		//comment added in vscode fromgithub dev
 
 	}
 
