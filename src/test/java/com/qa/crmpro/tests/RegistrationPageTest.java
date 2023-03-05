@@ -1,4 +1,4 @@
-package com.qa.democart.tests;
+package com.qa.crmpro.tests;
 
 import java.util.List;
 import java.util.Random;
@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.qa.democart.utils.Constants;
+import com.qa.crmpro.utils.Constants;
 
 public class RegistrationPageTest extends BaseTest {
 

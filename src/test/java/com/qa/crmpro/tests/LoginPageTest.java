@@ -1,4 +1,4 @@
-package com.qa.democart.tests;
+package com.qa.crmpro.tests;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.qa.democart.utils.Constants;
+import com.qa.crmpro.utils.Constants;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;

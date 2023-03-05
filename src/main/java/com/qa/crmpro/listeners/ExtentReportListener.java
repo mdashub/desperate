@@ -1,4 +1,4 @@
-package com.qa.democart.listeners;
+package com.qa.crmpro.listeners;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,7 +15,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.qa.democart.driverFactory.DriverFactory;
+import com.qa.crmpro.driverFactory.DriverFactory;
 
 public class ExtentReportListener extends DriverFactory implements ITestListener {
 

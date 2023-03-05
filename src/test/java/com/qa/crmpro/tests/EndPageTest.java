@@ -1,4 +1,4 @@
-package com.qa.democart.tests;
+package com.qa.crmpro.tests;
 
 import org.testng.annotations.BeforeClass;
 

@@ -1,4 +1,4 @@
-package com.qa.democart.tests;
+package com.qa.crmpro.tests;
 
 import java.util.Collection;
 import java.util.List;
@@ -8,8 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.qa.democart.pages.LoginPage;
-import com.qa.democart.utils.Constants;
+import com.qa.crmpro.pages.LoginPage;
+import com.qa.crmpro.utils.Constants;
 
 public class AccountsPageTest extends BaseTest {
 	

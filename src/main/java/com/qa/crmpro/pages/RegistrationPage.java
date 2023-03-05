@@ -1,4 +1,4 @@
-package com.qa.democart.pages;
+package com.qa.crmpro.pages;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.qa.democart.utils.ElementUtils;
+import com.qa.crmpro.utils.ElementUtils;
 
 public class RegistrationPage {
 

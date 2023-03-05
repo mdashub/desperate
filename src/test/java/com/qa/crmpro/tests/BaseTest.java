@@ -1,4 +1,4 @@
-package com.qa.democart.tests;
+package com.qa.crmpro.tests;
 
 import java.util.Properties;
 
@@ -6,11 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
-import com.qa.democart.driverFactory.DriverFactory;
-import com.qa.democart.pages.AccountsPage;
-import com.qa.democart.pages.EndPage;
-import com.qa.democart.pages.LoginPage;
-import com.qa.democart.pages.RegistrationPage;
+import com.qa.crmpro.driverFactory.DriverFactory;
+import com.qa.crmpro.pages.AccountsPage;
+import com.qa.crmpro.pages.EndPage;
+import com.qa.crmpro.pages.LoginPage;
+import com.qa.crmpro.pages.RegistrationPage;
 
 
 public class BaseTest {

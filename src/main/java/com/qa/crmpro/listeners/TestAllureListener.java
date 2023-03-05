@@ -1,4 +1,4 @@
-package com.qa.democart.listeners;
+package com.qa.crmpro.listeners;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -7,7 +7,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.qa.democart.driverFactory.DriverFactory;
+import com.qa.crmpro.driverFactory.DriverFactory;
 
 import io.qameta.allure.Attachment;
 
