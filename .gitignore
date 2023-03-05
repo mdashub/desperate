@@ -1,8 +1,12 @@
 allure-report/
 screenshots/
+mdas_screenshot/
+build_Extent_Report_mdas/
+allure-results/
 test-output/
 build/
 
 #java
 *.class
 *jar
+/target/

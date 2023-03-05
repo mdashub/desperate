@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CRMPRO Regression Suite" thread-count="5"
+	verbose="4">
+	
+	<listeners>
+		<listener
+				class-name="com.qa.democart.listeners.TestAllureListener" />
+	</listeners>
+	
+	<listeners>
+		<listener
+			class-name="com.qa.democart.listeners.ExtentReportListener" />
+	</listeners>
+	
+	
+	
+	<test name="Login Page Test">
+		<classes>
+			<class name="com.qa.democart.tests.LoginPageTest" />
+		</classes>
+	</test>
+</suite>
+

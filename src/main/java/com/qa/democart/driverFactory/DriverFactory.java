@@ -1,10 +1,14 @@
 package com.qa.democart.driverFactory;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -15,32 +19,30 @@ public class DriverFactory {
 	Properties properties;
 	private WebDriver driver;
 	FileInputStream file = null;
+	public static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<WebDriver>();
 
 	public Properties initProperties() {
 
 		/**
 		 * To pass argument from maven command line
 		 */
-		String environment = System.getProperty("environment");
+		String env = System.getProperty("env");
 		try {
-			if (environment == null) {
+			if (env.equals("QA")) {
 				System.out.println("Running in the QA env. . . ");
 				file = new FileInputStream("./src/test/resources/config/qa.config.properties");
 
-				}
-			else if (environment.equals("dev")) {
+			} else if (env.equals("dev")) {
 				System.out.println("Running in the DEV env. . . ");
 				file = new FileInputStream("./src/test/resources/config/dev.config.properties");
 
-				} 
-			else if (environment.equals("stg")) {
+			} else if (env.equals("stg")) {
 				System.out.println("Running in the STG env. . . ");
 				file = new FileInputStream("./src/test/resources/config/stg.config.properties");
-				}
 			}
-		
-			catch (FileNotFoundException e) 
-		{
+		}
+
+		catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 
@@ -49,7 +51,7 @@ public class DriverFactory {
 			properties = new Properties();
 			properties.load(file);
 
-			} catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		return properties;
@@ -62,22 +64,48 @@ public class DriverFactory {
 
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
+			// driver = new ChromeDriver();
+			threadLocalDriver.set(new ChromeDriver());
 
 		}
 		if (browserName.equalsIgnoreCase("Edge")) {
 			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-
+			//driver = new EdgeDriver();
+			threadLocalDriver.set(new ChromeDriver());
 		}
 
 		String urltolaunch = properties.getProperty("url").trim();
 
-		driver.get(urltolaunch);
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
+		getDriver().get(urltolaunch);
+		getDriver().manage().window().maximize();
+		getDriver().manage().deleteAllCookies();
 
-		return driver;
+		return getDriver();
+
+	}
+
+	public WebDriver getDriver()
+
+	{
+		return threadLocalDriver.get();
+	}
+
+	/**
+	 * Take screenshot
+	 * 
+	 */
+	public String getScreenshot() {
+		File screenshotFile = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+		String path = System.getProperty("user.dir") + "/mdas_screenshot/" + System.currentTimeMillis() + ".png";
+		File destination = new File(path);
+		try {
+			FileUtils.copyFile(screenshotFile, destination);
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+
+		return path;
 
 	}
 

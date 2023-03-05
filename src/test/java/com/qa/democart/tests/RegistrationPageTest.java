@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -44,15 +45,15 @@ public class RegistrationPageTest extends BaseTest {
 	}
 
 	@Test(priority = 2, enabled = true, dataProvider = "namesToBeChecked")
-	public void isRegistrationUnsuccessfullTest(String firstName) {
+	public void isAlertTextTestForUnsuccessfulRegistartion(String firstName) {
 		//System.out.println(Thread.currentThread().getId());
-		String textinAlertPop = registrationpage.isRegistrationUnsuccessfull(firstName);
+		String textinAlertPop = registrationpage.isAlertTextTestForUnsuccessfulRegistartion(firstName);
 		Assert.assertEquals(textinAlertPop, Constants.ALERT_MESSAGE, Constants.DISPLAY_MESSAGE);
 	}
 
 	@Test(priority = 3, enabled = false)
 	public void isholdingNextLandingPageObjectTest() {
-		endpage = registrationpage.isholdingNextLandingPageObject();
+		endPage = registrationpage.isholdingNextLandingPageObject();
 	}
 	
 	

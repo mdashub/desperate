@@ -19,6 +19,7 @@ public class AccountsPageTest extends BaseTest {
 		String username = properties.getProperty("username").trim();
 		String password = properties.getProperty("password").trim();
 		accountspage = loginpage.logging(username, password);
+		//loginpage.logging(username, password,accountspage);
 	}
 
 	@Test(priority = 1)

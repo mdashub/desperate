@@ -3,6 +3,7 @@ package com.qa.democart.tests;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import com.qa.democart.driverFactory.DriverFactory;
@@ -18,10 +19,10 @@ public class BaseTest {
 	LoginPage loginpage;
 	AccountsPage accountspage;
 	RegistrationPage registrationpage;
-	EndPage endpage;
+
+	EndPage endPage;
 	
-	
-	private WebDriver driver;
+	protected WebDriver driver;
 
 	@BeforeTest
 	public void setUp() {
@@ -37,11 +38,12 @@ public class BaseTest {
 
 	}
 
-	/*
-	 * @AfterTest public void tearDown() {
-	 * //System.out.println("Will Close the Browser"); driver.quit();
-	 * 
-	 * }
-	 */
+	
+	  @AfterTest 
+	  public void tearDown() {
+	  System.out.println("Will Close the Browser"); driver.quit();
+	  
+	  }
+	 
 
 }

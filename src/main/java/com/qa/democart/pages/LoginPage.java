@@ -12,6 +12,7 @@ public class LoginPage {
 	private WebDriver driver;
 	private ElementUtils eleUtils;
 
+	//param constructor
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 		this.eleUtils = new ElementUtils(driver);
@@ -54,6 +55,7 @@ public class LoginPage {
 		
 		// page chaining - method to return next landing page object is called Page Chaining.
 		return new AccountsPage(driver);
+		//return driver;
 		
 
 	}

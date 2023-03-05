@@ -37,7 +37,7 @@ public class RegistrationPage {
 		return eleUtils.doGetText(ownerLocatorRegPage);
 	}
 
-	public String isRegistrationUnsuccessfull(String firstName) {
+	public String isAlertTextTestForUnsuccessfulRegistartion(String firstName) {
 
 		eleUtils.wait_forElementToBeClickable(firstNameLocator, 5);
 		eleUtils.doSendKeys(firstNameLocator, firstName);

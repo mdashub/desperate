@@ -2,6 +2,7 @@ package com.qa.democart.tests;
 
 import org.testng.annotations.BeforeClass;
 
+
 public class EndPageTest extends BaseTest {
 	
 	
@@ -16,7 +17,7 @@ public class EndPageTest extends BaseTest {
 		registrationpage = accountspage.isNavigatingToNewContacts();
 		
 		
-		endpage = registrationpage.isholdingNextLandingPageObject();
+		endPage = registrationpage.isholdingNextLandingPageObject();
 	}
 
 }
