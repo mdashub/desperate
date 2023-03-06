@@ -5,7 +5,11 @@ import org.testng.annotations.Test;
 public class CartTest {
 
 	@Test
-	public void tesCart() {
+	public void testCart() {
+		
+	}
+	@Test
+	public void testCart(int number) {
 		
 	}
 }
