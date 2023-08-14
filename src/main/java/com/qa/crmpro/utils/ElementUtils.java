@@ -531,7 +531,7 @@ public class ElementUtils {
 	 */
 	public Alert wait_forAlertIsPresent(int timeOut) {
 
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		return wait.until(ExpectedConditions.alertIsPresent());
 	}
 
@@ -559,7 +559,7 @@ public class ElementUtils {
 	}
 
 	public String wait_forTitleContains(String titleValue, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		if (wait.until(ExpectedConditions.titleContains(titleValue))) {
 			return driver.getTitle();
 		}
@@ -567,7 +567,7 @@ public class ElementUtils {
 	}
 
 	public String wait_forTitleIs(String titleValue, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		if (wait.until(ExpectedConditions.titleIs(titleValue))) {
 			return driver.getTitle();
 		}
@@ -575,7 +575,7 @@ public class ElementUtils {
 	}
 
 	public String wait_forURLContains(String fractionURL, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		if (wait.until(ExpectedConditions.urlContains(fractionURL))) {
 			return driver.getCurrentUrl();
 		}
@@ -584,7 +584,7 @@ public class ElementUtils {
 	}
 
 	public String wait_forURLToBe(String fullURL, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		if (wait.until(ExpectedConditions.urlToBe(fullURL))) {
 			return driver.getCurrentUrl();
 		}
@@ -604,20 +604,20 @@ public class ElementUtils {
 	 */
 
 	public WebElement wait_forElementToBeVisibleUsingByLocators(By locator, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
 	}
 
 	public WebElement wait_forElementToBeVisibleUsingWebElement(By locator, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		return wait.until(ExpectedConditions.visibilityOf(getElement(locator)));
 
 	}
 
 	public List<WebElement> wait_forElementsToBeVisibleUsingByLocator(By locator, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
 
 	}
@@ -633,13 +633,13 @@ public class ElementUtils {
 	}
 
 	public WebElement wait_forElementToBeClickable(By locator, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		return wait.until(ExpectedConditions.elementToBeClickable(locator));
 
 	}
 
 	public WebElement wait_forElementToBeClickableElement(WebElement webElement, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		return wait.until(ExpectedConditions.elementToBeClickable(webElement));
 
 	}
@@ -660,7 +660,7 @@ public class ElementUtils {
 	 */
 
 	public WebElement wait_forElementPresentInDOM(By locator, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		return (wait.until(ExpectedConditions.presenceOfElementLocated(locator)));
 	}
 
@@ -672,7 +672,7 @@ public class ElementUtils {
 	 * @return
 	 */
 	public WebElement wait_forElementPresentInDOM(By locator, int timeOut, int timeInterval) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut, timeInterval);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		return (wait.until(ExpectedConditions.presenceOfElementLocated(locator)));
 	}
 
@@ -686,7 +686,7 @@ public class ElementUtils {
 
 	public boolean wait_forElemnetInsivilibity(By locator, int timeOut) {
 
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 
 		return wait.until(ExpectedConditions.invisibilityOf(getElement(locator)));
 
@@ -707,7 +707,7 @@ public class ElementUtils {
 	 * @param timeOut
 	 */
 	public void wait_forFrameAndSwitchToIt(By locator, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(getElement(locator)));
 
 		// wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(locator));
@@ -729,7 +729,7 @@ public class ElementUtils {
 	 */
 
 	public void wait_forFrameAndSwitchToIt(String frameName, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameName));
 
 	}
@@ -747,7 +747,7 @@ public class ElementUtils {
 	 */
 
 	public void wait_forFrameAndSwitchToIt(int frameIndex, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameIndex));
 
 	}
@@ -759,7 +759,7 @@ public class ElementUtils {
 		// Either use below FluentWait or WebDriverWait, both are same.
 		// Wait wait1 = new FluentWait(driver);
 
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.withTimeout(Duration.ofSeconds(timeOut)).pollingEvery(Duration.ofMillis(pollingTime))
 				.ignoring(NoSuchMethodException.class);
 
@@ -771,7 +771,7 @@ public class ElementUtils {
 		// Either use below FluentWait or WebDriverWait, both are same.
 		// Wait wait1 = new FluentWait(driver);
 
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.withTimeout(Duration.ofSeconds(timeOut)).pollingEvery(Duration.ofMillis(pollingTime))
 				.ignoring(NoSuchMethodException.class);
 
@@ -783,7 +783,7 @@ public class ElementUtils {
 		// Either use below FluentWait or WebDriverWait, both are same.
 		// Wait wait1 = new FluentWait(driver);
 
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.withTimeout(Duration.ofSeconds(timeOut)).pollingEvery(Duration.ofMillis(pollingTime))
 				.ignoring(NoSuchMethodException.class);
 
@@ -795,7 +795,7 @@ public class ElementUtils {
 		// Either use below FluentWait or WebDriverWait, both are same.
 		// Wait wait1 = new FluentWait(driver);
 
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
 		wait.withTimeout(Duration.ofSeconds(timeOut)).pollingEvery(Duration.ofMillis(pollingTime))
 				.ignoring(NoSuchMethodException.class);
 

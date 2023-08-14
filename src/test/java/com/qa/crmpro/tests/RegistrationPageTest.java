@@ -1,27 +1,34 @@
 package com.qa.crmpro.tests;
 
-import java.util.List;
 import java.util.Random;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.qa.crmpro.pages.CRMApp;
+import com.qa.crmpro.pages.RegistrationPage;
 import com.qa.crmpro.utils.Constants;
 
 public class RegistrationPageTest extends BaseTest {
 
+	private CRMApp crmApp ;
+	private RegistrationPage registrationpage;
+	
 	@BeforeClass
 	public void registrationPageSetUp() {
 		String username = properties.getProperty("username").trim();
 		String password = properties.getProperty("password").trim();
-		accountspage = loginpage.logging(username, password);
-		accountspage.isNavigationMenuPresentInsideAccountsPage();
-		accountspage.isClickingOnContacts();
-		registrationpage = accountspage.isNavigatingToNewContacts();
+		crmApp = loginpage.logging(username, password);
+		
+		
+		registrationpage = new RegistrationPage(crmApp);
+		registrationpage.isNavigatingToNewContacts();
+		
+		//accountspage.isNavigationMenuPresentInsideAccountsPage();
+		//accountspage.isClickingOnContacts();
+		//accountspage.isNavigatingToNewContacts();
 	}
 
 	@Test(priority = 1, enabled = true)
@@ -51,10 +58,10 @@ public class RegistrationPageTest extends BaseTest {
 		Assert.assertEquals(textinAlertPop, Constants.ALERT_MESSAGE, Constants.DISPLAY_MESSAGE);
 	}
 
-	@Test(priority = 3, enabled = false)
-	public void isholdingNextLandingPageObjectTest() {
-		endPage = registrationpage.isholdingNextLandingPageObject();
-	}
-	
+//	@Test(priority = 3, enabled = false)
+//	public void isholdingNextLandingPageObjectTest() {
+//		endPage = registrationpage.isholdingNextLandingPageObject();
+//	}
+//	
 	
 }

@@ -16,19 +16,25 @@ import org.openqa.selenium.edge.EdgeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DriverFactory {
-	Properties properties;
+	public  Properties properties;
 	private WebDriver driver;
-	FileInputStream file = null;
-	public static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<WebDriver>();
+	public  FileInputStream file = null;
+	public  ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<WebDriver>();
 
-	public Properties initProperties() {
+	public  Properties initProperties() {
 
 		/**
 		 * To pass argument from maven command line
 		 */
 		String env = System.getProperty("env");
+		String withOutEnv = "chrome";
 		try {
-			if (env.equals("QA")) {
+
+			if (withOutEnv.equals("chrome")) {
+				System.out.println("Running in the QA env. . . ");
+
+				file = new FileInputStream("./src/test/resources/config/qa.config.properties");
+			} else if (env.equals("QA")) {
 				System.out.println("Running in the QA env. . . ");
 				file = new FileInputStream("./src/test/resources/config/qa.config.properties");
 
@@ -39,6 +45,7 @@ public class DriverFactory {
 			} else if (env.equals("stg")) {
 				System.out.println("Running in the STG env. . . ");
 				file = new FileInputStream("./src/test/resources/config/stg.config.properties");
+
 			}
 		}
 
@@ -58,7 +65,7 @@ public class DriverFactory {
 
 	}
 
-	public WebDriver initDriver(Properties properties) {
+	public  WebDriver initDriver(Properties properties) {
 
 		String browserName = properties.getProperty("browser").trim();
 
@@ -70,13 +77,11 @@ public class DriverFactory {
 		}
 		if (browserName.equalsIgnoreCase("Edge")) {
 			WebDriverManager.edgedriver().setup();
-			//driver = new EdgeDriver();
+			// driver = new EdgeDriver();
 			threadLocalDriver.set(new ChromeDriver());
 		}
 
-		String urltolaunch = properties.getProperty("url").trim();
-
-		getDriver().get(urltolaunch);
+		
 		getDriver().manage().window().maximize();
 		getDriver().manage().deleteAllCookies();
 
@@ -84,7 +89,7 @@ public class DriverFactory {
 
 	}
 
-	public WebDriver getDriver()
+	public  WebDriver getDriver()
 
 	{
 		return threadLocalDriver.get();

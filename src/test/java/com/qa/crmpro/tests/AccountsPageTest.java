@@ -1,6 +1,5 @@
 package com.qa.crmpro.tests;
 
-import java.util.Collection;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -8,17 +7,27 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.qa.crmpro.pages.LoginPage;
+import com.qa.crmpro.pages.AccountsPage;
+import com.qa.crmpro.pages.CRMApp;
 import com.qa.crmpro.utils.Constants;
 
 public class AccountsPageTest extends BaseTest {
+	/*
+	 * If crmApp reference is made private in LoginPageTest
+	 */
+	
+	private CRMApp crmApp;
+	private AccountsPage accountspage;
 	
 	
 	@BeforeClass
 	public void accountPageSetUp() {
 		String username = properties.getProperty("username").trim();
 		String password = properties.getProperty("password").trim();
-		accountspage = loginpage.logging(username, password);
+		
+		crmApp = loginpage.logging(username, password);
+		accountspage = new AccountsPage(crmApp);
+		
 		//loginpage.logging(username, password,accountspage);
 	}
 
@@ -40,8 +49,8 @@ public class AccountsPageTest extends BaseTest {
 	
 	@Test(priority = 4)
 	public void isNavigatingToNewContactsTest() {
-		registrationpage = accountspage.isNavigatingToNewContacts();
-		
+		//registrationpage = accountspage.isNavigatingToNewContacts();
+		accountspage.isNavigatingToNewContacts();
 		// can write assert for registration page 
 	}
 

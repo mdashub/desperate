@@ -12,7 +12,6 @@ import com.qa.crmpro.pages.EndPage;
 import com.qa.crmpro.pages.LoginPage;
 import com.qa.crmpro.pages.RegistrationPage;
 
-
 public class BaseTest {
 	Properties properties;
 	DriverFactory driverfactory;
@@ -21,14 +20,17 @@ public class BaseTest {
 	RegistrationPage registrationpage;
 
 	EndPage endPage;
-	
-	protected WebDriver driver;
+
+	public WebDriver driver;
 
 	@BeforeTest
 	public void setUp() {
 		driverfactory = new DriverFactory();
 		properties = driverfactory.initProperties();
 		driver = driverfactory.initDriver(properties);
+
+		String urltolaunch = properties.getProperty("url").trim();
+		driver.get(urltolaunch);
 
 		/*
 		 * Passing the driver to login Page
@@ -38,12 +40,11 @@ public class BaseTest {
 
 	}
 
-	
-	  @AfterTest 
-	  public void tearDown() {
-	  System.out.println("Will Close the Browser"); driver.quit();
-	  
-	  }
-	 
+	@AfterTest
+	public void tearDown() {
+		System.out.println("Will Close the Browser");
+		driver.quit();
+
+	}
 
 }
