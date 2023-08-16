@@ -1,5 +1,6 @@
 package com.qa.crmpro.tests;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -53,5 +54,7 @@ public class AccountsPageTest extends BaseTest {
 		accountspage.isNavigatingToNewContacts();
 		// can write assert for registration page 
 	}
+	
+	
 
 }
