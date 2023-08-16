@@ -18,7 +18,7 @@
 			<class name="com.qa.crmpro.tests.LoginPageTest" />
 		</classes>
 	</test>
-	<test name="Accounts Page Test">
+	<test name="Accounts Page Tests">
 		<!-- <parameter name="browser" value="chrome" />
 		<parameter
 		name="browserversion" value="90" />-->
